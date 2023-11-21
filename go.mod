@@ -1,4 +1,4 @@
-module github.com/NubeDev/bom-api
+module github.com/NubeIO/bom-api
 
 go 1.18
 

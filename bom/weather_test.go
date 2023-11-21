@@ -2,7 +2,7 @@ package bom
 
 import (
 	"fmt"
-	pprint "github.com/NubeDev/bom-api/print"
+	pprint "github.com/NubeIO/bom-api/print"
 	"testing"
 )
 
