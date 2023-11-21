@@ -21,7 +21,7 @@ func New(cli *Client) *Client {
 	mutex.Lock()
 	defer mutex.Unlock()
 	if cli == nil {
-		log.Fatal("rubix-os client cli can not be empty")
+		log.Fatal("bom client cli can not be empty")
 		return nil
 	}
 	baseURL := "https://api.weather.bom.gov.au/v1"

@@ -29,8 +29,8 @@ Location is returned as a 6 character precision geohash such as '1r143n'.
 (https://en.wikipedia.org/wiki/Geohash)
 */
 
-func (inst *Client) SearchByTown(town, state string) (*Search, string, error) {
-	url := fmt.Sprintf("/locations?search=%s+%s", town, state)
+func (inst *Client) SearchByTown(town string) (*Search, string, error) {
+	url := fmt.Sprintf("/locations?search=%s", town)
 	resp, err := FormatRestyResponse(inst.Rest.R().
 		SetResult(&Search{}).
 		Get(url))
@@ -40,7 +40,7 @@ func (inst *Client) SearchByTown(town, state string) (*Search, string, error) {
 	data := resp.Result().(*Search)
 	geo := getGeo(data)
 	if len(geo) != 6 {
-		return nil, "", errors.New(fmt.Sprintf("invalid geo: %s lenght: %d", geo, len(geo)))
+		return nil, "", errors.New(fmt.Sprintf("invalid geo: %s length: %d", geo, len(geo)))
 	}
 	return data, geo, nil
 }

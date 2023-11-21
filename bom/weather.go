@@ -43,8 +43,8 @@ func (inst *Client) ObservationByZip(town string) (*Observations, error) {
 	return inst.Observations(geo)
 }
 
-func (inst *Client) ObservationByTown(town, state string) (*Observations, error) {
-	_, geo, err := inst.SearchByTown(town, state)
+func (inst *Client) ObservationByTown(town string) (*Observations, error) {
+	_, geo, err := inst.SearchByTown(town)
 	if err != nil {
 		return nil, err
 	}

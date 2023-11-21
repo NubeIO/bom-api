@@ -7,11 +7,11 @@ import (
 )
 
 func TestClient_Observations(t *testing.T) {
-	search, err := client.ObservationByTown("helensburgh", "nsw")
+	search, err := client.ObservationByTown("helensburgh")
 	if err != nil {
 		fmt.Print(err)
 	}
-	pprint.PrintJOSN(search)
+	pprint.PrintJSON(search)
 }
 
 func TestClient_ObservationsByZip(t *testing.T) {
@@ -19,5 +19,5 @@ func TestClient_ObservationsByZip(t *testing.T) {
 	if err != nil {
 		fmt.Print(err)
 	}
-	pprint.PrintJOSN(search)
+	pprint.PrintJSON(search)
 }
